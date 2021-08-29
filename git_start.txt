@@ -1,0 +1,64 @@
+A new repo from an existing project
+Say you’ve got an existing project that you want to start tracking with git.
+
+Go into the directory containing the project.
+Type git init.
+Type git add to add all of the relevant files.
+You’ll probably want to create a .gitignore file right away, to indicate all of the files you don’t want to track. Use git add .gitignore, too.
+Type git commit.
+Connect it to github
+You’ve now got a local git repository. You can use git locally, like that, if you want. But if you want the thing to have a home on github, do the following.
+
+Go to github.
+Log in to your account.
+Click the new repository button in the top-right. You’ll have an option there to initialize the repository with a README file, but I don’t.
+Click the “Create repository” button.
+Now, follow the second set of instructions, “Push an existing repository…”
+
+$ git remote add origin git@github.com:username/new_repo
+$ git push -u origin master(-u so that you don't have to type this  again and again)
+Actually, the first line of the instructions will say
+
+$ git remote add origin https://github.com/username/new_repo
+
+git error while pushing 
+"The tip of your current branch is behind its remote counterpart" means that there have been changes on the remote branch that you don’t have locally. And Git tells you to import new changes from REMOTE and merge it with your code and then push it to remote.
+
+You can use this command to force changes to the server with the local repository ().
+
+git push -f origin master
+
+OR
+
+SET THE CURRENT BRANCH TO MASTER 
+git pull --rebase origin master 
+git push origin master
+
+
+CHECKING/CREATING OUT DIFFERENT BRANCHES 
+
+git branch dev(creating new branch on root directory)
+git checkout dev
+git push -u origin dev
+git branch -a(to see all that is in your local & remote repository)
+*master
+dev
+ 
+git branch -a(now you can see the branch on remote repository as well)
+*master
+dev
+ 
+  remotes/origin/dev
+  remotes/origin/master
+
+
+
+
+git merge dev ( to merge the 'dev' branch)
+git push origin master (now pushed the changes to local repository so on local level theres  one branch now "master")
+git branch --merged( to see merged branches )
+git branch -d dev(now delete the branch "dev" once merged in local repo )
+see git branch --merged
+git push origin --delete dev(now delete the branch on remote origin as well)
+
+
